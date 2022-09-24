@@ -69,3 +69,23 @@ Obj = {name1: name1, age2: age2};
 //es6
 obj2 = {name1, age2};
 console.log(obj2);
+
+// arrow functions
+
+
+
+// promesas
+
+const helloPromise = () => {
+    return new Promise((resolve, reject) => {
+        if(false){
+            resolve('hey todo bem')
+        } else {
+            reject('ups!!');
+        }
+    });
+}
+
+helloPromise()
+    .then(response => console.log(response))
+    .catch(console.error())
