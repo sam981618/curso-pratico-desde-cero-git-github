@@ -89,3 +89,51 @@ const helloPromise = () => {
 helloPromise()
     .then(response => console.log(response))
     .catch(console.error())
+
+
+    class calculator {
+        constructor(){
+            this.valueA = 0;
+            this.valueB = 0;
+        }
+        sum(valueA, valueB){
+            this.valueA = valueA;
+            this.valueB = valueB;
+            return this.valueA + this.valueB;
+        }
+    }
+
+    const calc = new calculator();
+    console.log(calc.sum(2, 2));
+
+    const Hello = require('./exportar');
+
+    console.log(Hello());
+
+    function* fibonacci(){
+        var fn1 = 1;
+        var fn2 = 1;
+        while (true){  
+          var actual = fn2;
+          fn2 = fn1;
+          fn1 = fn1 + actual;
+          var reset = yield actual;
+          if (reset){
+              fn1 = 1;
+              fn2 = 1;
+          }
+        }
+      }
+      
+      var secuencia = fibonacci();
+      console.log(secuencia.next().value);     // 1
+      console.log(secuencia.next().value);     // 1
+      console.log(secuencia.next().value);     // 2
+      console.log(secuencia.next().value);     // 3
+      console.log(secuencia.next().value);     // 5
+      console.log(secuencia.next().value);     // 8
+      console.log(secuencia.next().value);     // 13
+      console.log(secuencia.next(true).value); // 1
+      console.log(secuencia.next().value);     // 1
+      console.log(secuencia.next().value);     // 2
+      console.log(secuencia.next().value);     // 3
